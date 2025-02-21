@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="task-form-page">
+<div class="container">
+    <nav>
+        <a href="index.php?command=dashboard" id="dashboard-link">Dashboard</a> |
+        <a href="index.php?command=employee_list" id="employee-list-link">Employees</a> |
+        <a href="index.php?command=employee_form" id="employee-form-link">Add Employee</a> |
+        <a href="index.php?command=task_list" id="task-list-link">Tasks</a> |
+        <a href="index.php?command=task_form" id="task-form-link">Add Task</a>
+    </nav>
+
+    <div n:if="$errors" class='message-block failure' id='error-block'>{$errors}</div>
+
+    <div class="content">
+        <div class="tasks list">
+        <h2>Add Task</h2>
+        <form method="post" action="">
+                <label for="des">Description:</label>
+                <textarea id="des" name="description">{$description}</textarea>
+
+            <div class="form-group form-radio-group">
+                <label>Estimate:</label>
+                <label><input type="radio" name="estimate" value="1"> 1</label>
+                <label><input type="radio" name="estimate" value="2"> 2</label>
+                <label><input type="radio" name="estimate" value="3"> 3</label>
+                <label><input type="radio" name="estimate" value="4"> 4</label>
+                <label><input type="radio" name="estimate" value="5"> 5</label>
+            </div>
+
+            <div class="form-group">
+                <label for="employeeId">Assigned to:</label>
+                <select id="employeeId" name="employeeId">
+                    <option value=""> Vali töötaja</option>
+                    {foreach $employees as $employee}
+                        <option value="{$employee->id}"
+                                {if $employee->id == $employeeId}selected{/if}>
+                            {$employee->firstName} {$employee->lastName}
+                        </option>
+                    {/foreach}
+                </select>
+            </div>
+            <div class="label-cell">
+                <label for="isCompleted">Completed</label>
+                <input type="checkbox" id="isCompleted" name="isCompleted" {if $completed}checked{/if}>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" name="submitButton">Save</button>
+                <button n:if="$deleteButton" name="deleteButton"
+                                             type="submit"
+                                             value="Delete">Delete</button>
+            </div>
+    </form>
+    </div>
+</div>
+
+<footer>
+    <hr>
+    <p>icd0007 Sample Application</p>
+</footer>
+</div>
+</body>
+</html>

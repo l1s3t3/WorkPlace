@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="employee-form-page">
+<div class="container">
+    <nav>
+        <a href="index.php?command=dashboard" id="dashboard-link">Dashboard</a> |
+        <a href="index.php?command=employee_list" id="employee-list-link">Employees</a> |
+        <a href="index.php?command=employee_form" id="employee-form-link">Add Employee</a> |
+        <a href="index.php?command=task_list" id="task-list-link">Tasks</a> |
+        <a href="index.php?command=task_form" id="task-form-link">Add Task</a>
+    </nav>
+
+    <div n:if="$errors" class='message-block failure' id='error-block'>{$errors}</div>
+
+    <div class="content">
+        <div class="employees list">
+            <h2>Add employee</h2>
+            <form method="post" action="" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <label for="fn">First name:</label>
+                    <input type="text" id="fn" name="firstName" value="{$firstName}">
+                </div>
+
+                <div class="form-group">
+                    <label for="ln">Last name:</label>
+                    <input type="text" id="ln" name="lastName" value="{$lastName}">
+                </div>
+
+                <div class="form-group">
+                    <label for="po">Position:</label>
+                    <select id="po" name="position">
+                        <option></option>
+                        <option value="o1">Manager</option>
+                        <option value="o2">Designer</option>
+                        <option value="o3">Developer</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="picture">Picture:</label>
+                    <input type="file" name="picture" id="fileToUpload">
+                </div>
+
+                <div class="form-group button-group">
+                    <button type="submit" name="submitButton">Save</button>
+                    <button n:if="$deleteButton" name="deleteButton"
+                                              type="submit"
+                                              value="Delete">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <hr>
+        <p>icd0007 Sample Application</p>
+    </footer>
+</div>
+</body>
+</html>

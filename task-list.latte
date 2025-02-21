@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="task-list-page">
+<div class="container">
+    <nav>
+        <a href="index.php?command=dashboard" id="dashboard-link">Dashboard</a> |
+        <a href="index.php?command=employee_list" id="employee-list-link">Employees</a> |
+        <a href="index.php?command=employee_form" id="employee-form-link">Add Employee</a> |
+        <a href="index.php?command=task_list" id="task-list-link">Tasks</a> |
+        <a href="index.php?command=task_form" id="task-form-link">Add Task</a>
+    </nav>
+
+    <div n:if="$isCompletedBlock" class='message-block completed' id='message-block'>Completed!</div>
+
+    <div class="content">
+        <div class="tasks list">
+            <h2>Tasks</h2>
+            <div class="task-list">
+                {foreach $tasks as $task}
+                    <div class="task-item">
+                        <div class="task-header">
+                <span class="edit">
+                    <a id="task-edit-link-{$task->id|escape}" href="index.php?command=task_form&task-id={$task->id|escape}">Edit</a>
+                </span>
+                        </div>
+                        <span data-task-id="{$task->id|escape}">
+                {$task->description|escape}<br><br>
+                <span class="estimate">
+                    {var $filledSquares = ($task->estimate !== null) ? min(5, max(0, (int) $task->estimate)) : 0}
+                    {var $emptySquares = 5 - $filledSquares}
+
+                    {for $i = 1; $i <= $filledSquares; $i++}
+                        <span class="square_one"></span>
+                    {/for}
+
+                    {for $i = 1; $i <= $emptySquares; $i++}
+                        <span class="square_two"></span>
+                    {/for}
+                </span>
+            </span>
+                        <span id="task-state-{$task->id|escape}" class="status">
+                {$task->status|escape}
+            </span>
+                    </div>
+                {/foreach}
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <hr>
+        <p>icd0007 Sample Application</p>
+    </footer>
+</div>
+</body>
+</html>

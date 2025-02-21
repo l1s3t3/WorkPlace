@@ -1,0 +1,272 @@
+body {
+    font-family: "Lucida Console", monospace;
+    margin: 0;
+    padding: 0;
+    background-color: lavender;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+nav {
+    text-align: center;
+    padding: 10px;
+    background-color: #AD88C6;
+    color: white;
+    border-radius: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+
+}
+
+.message-block {
+    margin-top: 10px;
+    width: auto;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: .25rem;
+    padding: 0.4rem 0.6rem;
+}
+
+.message-block.completed {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.message-block.failure {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.employees, .tasks {
+    width: 45%;
+    padding: 15px;
+    background-color: #DBC4F0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.employees.list, .tasks.list {
+    width: 60%;
+    margin: 0 auto;
+    list-style: none;
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.employee-item {
+    border: 1px solid #AD88C6;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 10px;
+    background-color: #DBC4F0;
+    font-size: 0.85rem;
+    position: relative;
+}
+
+.task-item {
+    position: relative;
+    border: 1px solid #AD88C6;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 10px;
+    background-color: #DBC4F0;
+    font-size: 0.85rem;
+}
+
+.employee-info {
+    display: flex;
+    gap: 15px;
+}
+
+.employee-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.employee-edit {
+    margin-left: auto;
+    align-self: flex-start;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.employee-edit a {
+    text-decoration: none;
+    color: rebeccapurple;
+    font-weight: bold;
+    background-color: #f0e6ff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.employee-edit a:hover {
+    color: #fff;
+    background-color: mediumpurple;
+}
+
+.task-header {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.edit {
+    display: inline-block;
+}
+
+.edit a {
+    text-decoration: none;
+    color: rebeccapurple;
+    font-weight: bold;
+    background-color: #f0e6ff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.edit a:hover {
+    color: #fff;
+    background-color: mediumpurple;
+}
+
+.status {
+    float: right;
+    text-decoration: none;
+    color: rebeccapurple;
+    font-weight: 1000;
+    border: 0.1rem solid mediumpurple;
+    padding: 0.12rem;
+
+}
+
+img {
+    height: 80px;
+    width: auto;
+    border-radius: 8px;
+    padding: 0.3rem;
+}
+
+.count {
+    margin-left: auto;
+    color: #4B0082;
+    font-size: 0.85rem;
+    align-self: flex-start;
+}
+
+.edit a:hover {
+    color: mediumpurple;
+}
+
+h2 {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 10px;
+    color: mediumpurple;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+}
+
+label {
+    font-weight: normal;
+    font-size: 0.9rem;
+    margin-bottom: 3px;
+    margin-right: 10px;
+}
+
+textarea, select, input[type="radio"] {
+    width: auto;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+textarea {
+    height: auto;
+    resize: none;
+}
+
+input[type="text"], input[type="file"], select {
+    margin-top: 10px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: auto;
+}
+
+.form-radio-group label {
+    margin-right: 5px;
+    font-weight: normal;
+}
+
+button {
+    background-color: rebeccapurple;
+    color: white;
+    padding: 10px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: auto;
+    float: right;
+}
+
+button:hover {
+    background-color: mediumpurple;
+}
+
+.square_one {
+    height: 10px;
+    width: 10px;
+    background-color: mediumpurple;
+    border-radius: 20%;
+    display: inline-block;
+    margin: 1.5px;
+    border: 1px solid black;
+}
+.square_two {
+    height: 10px;
+    width: 10px;
+    background-color: white;
+    border-radius: 20%;
+    display: inline-block;
+    margin: 1.5px;
+    border: 1px solid black;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #777;
+}
+
+
+
+
